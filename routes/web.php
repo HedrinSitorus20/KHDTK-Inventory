@@ -3,7 +3,7 @@
 use App\Http\Controllers\Admin\BarangController;
 use App\Http\Controllers\Admin\BarangkeluarController;
 use App\Http\Controllers\Admin\BarangmasukController;
-use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\PengecekController;
 use App\Http\Controllers\Admin\BerandaController;
 use App\Http\Controllers\Admin\JenisBarangController;
 use App\Http\Controllers\Admin\LapBarangKeluarController;
@@ -89,13 +89,13 @@ Route::group(['middleware' => 'userlogin'], function () {
         Route::post('/admin/barang/proses_hapus/{barang}', [BarangController::class, 'proses_hapus']);
     });
 
-    Route::middleware(['checkRoleUser:/customer,menu'])->group(function () {
-        // Customer
-        Route::resource('/admin/customer', \App\Http\Controllers\Admin\CustomerController::class);
-        Route::get('/admin/customer/show/', [CustomerController::class, 'show'])->name('customer.getcustomer');
-        Route::post('/admin/customer/proses_tambah/', [CustomerController::class, 'proses_tambah'])->name('customer.store');
-        Route::post('/admin/customer/proses_ubah/{customer}', [CustomerController::class, 'proses_ubah']);
-        Route::post('/admin/customer/proses_hapus/{customer}', [CustomerController::class, 'proses_hapus']);
+    Route::middleware(['checkRoleUser:/pengecek,menu'])->group(function () {
+        // Pengecek
+        Route::resource('/admin/pengecek', \App\Http\Controllers\Admin\PengecekController::class);
+        Route::get('/admin/pengecek/show/', [PengecekController::class, 'show'])->name('pengecek.getpengecek');
+        Route::post('/admin/pengecek/proses_tambah/', [PengecekController::class, 'proses_tambah'])->name('pengecek.store');
+        Route::post('/admin/pengecek/proses_ubah/{pengecek}', [PengecekController::class, 'proses_ubah']);
+        Route::post('/admin/pengecek/proses_hapus/{pengecek}', [PengecekController::class, 'proses_hapus']);
     });
 
     Route::middleware(['checkRoleUser:/barang-masuk,submenu'])->group(function () {

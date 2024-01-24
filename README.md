@@ -11,7 +11,7 @@ Untuk tampilannya saya sudah pasang template admin `bootstrap v5` yaitu `sash ad
 * **Satuan Barang**
 * **Merk Barang**
 * **Barang**
-* **Customer**
+* **Pengecek**
 * **Barang Masuk**
 * **Barang Keluar**
 * **Laporan Barang Masuk**

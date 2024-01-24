@@ -3,13 +3,13 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content modal-content-demo">
             <div class="modal-header">
-                <h6 class="modal-title">Tambah Customer</h6><button aria-label="Close" class="btn-close"
+                <h6 class="modal-title">Tambah Pengecek</h6><button aria-label="Close" class="btn-close"
                     data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="customer" class="form-label">Nama Customer <span class="text-danger">*</span></label>
-                    <input type="text" name="customer" class="form-control" placeholder="">
+                    <label for="pengecek" class="form-label">Nama Pengecek <span class="text-danger">*</span></label>
+                    <input type="text" name="pengecek" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="notelp" class="form-label">No Telepon</label>
@@ -38,13 +38,13 @@
 @section('formTambahJS')
     <script>
         function checkForm() {
-            const customer = $("input[name='customer']").val();
+            const pengecek = $("input[name='pengecek']").val();
             setLoading(true);
             resetValid();
 
-            if (customer == "") {
-                validasi('Nama Customer wajib di isi!', 'warning');
-                $("input[name='customer']").addClass('is-invalid');
+            if (pengecek == "") {
+                validasi('Nama Pengecek wajib di isi!', 'warning');
+                $("input[name='pengecek']").addClass('is-invalid');
                 setLoading(false);
                 return false;
             } else {
@@ -54,16 +54,16 @@
         }
 
         function submitForm() {
-            const customer = $("input[name='customer']").val();
+            const pengecek = $("input[name='pengecek']").val();
             const notelp = $("input[name='notelp']").val();
             const alamat = $("textarea[name='alamat']").val();
 
             $.ajax({
                 type: 'POST',
-                url: "{{ route('customer.store') }}",
+                url: "{{ route('pengecek.store') }}",
                 enctype: 'multipart/form-data',
                 data: {
-                    customer: customer,
+                    pengecek: pengecek,
                     notelp: notelp,
                     alamat: alamat
                 },
@@ -81,12 +81,12 @@
         }
 
         function resetValid() {
-            $("input[name='customer']").removeClass('is-invalid');
+            $("input[name='pengecek']").removeClass('is-invalid');
         };
 
         function reset() {
             resetValid();
-            $("input[name='customer']").val('');
+            $("input[name='pengecek']").val('');
             $("input[name='notelp']").val('');
             $("textarea[name='ket']").val('');
             setLoading(false);

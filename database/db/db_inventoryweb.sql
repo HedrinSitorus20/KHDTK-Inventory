@@ -61,7 +61,7 @@ insert  into `migrations`(`id`,`migration`,`batch`) values
 (11,'2022_11_15_180434_create_tbl_merk',4),
 (12,'2022_11_16_120018_create_tbl_appreance',5),
 (13,'2022_11_25_141731_create_tbl_barang',6),
-(14,'2022_11_26_011349_create_tbl_customer',7),
+(14,'2022_11_26_011349_create_tbl_pengecek',7),
 (16,'2022_11_28_151108_create_tbl_barangmasuk',8),
 (17,'2022_11_30_115904_create_tbl_barangkeluar',9);
 
@@ -498,7 +498,7 @@ CREATE TABLE `tbl_barangmasuk` (
   `bm_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `bm_kode` varchar(255) NOT NULL,
   `barang_kode` varchar(255) NOT NULL,
-  `customer_id` varchar(255) NOT NULL,
+  `pengecek_id` varchar(255) NOT NULL,
   `bm_tanggal` varchar(255) NOT NULL,
   `bm_jumlah` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -508,28 +508,28 @@ CREATE TABLE `tbl_barangmasuk` (
 
 /*Data for the table `tbl_barangmasuk` */
 
-insert  into `tbl_barangmasuk`(`bm_id`,`bm_kode`,`barang_kode`,`customer_id`,`bm_tanggal`,`bm_jumlah`,`created_at`,`updated_at`) values 
+insert  into `tbl_barangmasuk`(`bm_id`,`bm_kode`,`barang_kode`,`pengecek_id`,`bm_tanggal`,`bm_jumlah`,`created_at`,`updated_at`) values 
 (1,'BM-1669730554623','BRG-1669390220236','2','2022-11-01','50','2022-11-29 14:02:43','2022-11-29 14:20:13'),
 (2,'BM-1669731639801','BRG-1669390175622','2','2022-11-30','10','2022-11-29 14:20:55','2022-11-29 14:20:55');
 
-/*Table structure for table `tbl_customer` */
+/*Table structure for table `tbl_pengecek` */
 
-DROP TABLE IF EXISTS `tbl_customer`;
+DROP TABLE IF EXISTS `tbl_pengecek`;
 
-CREATE TABLE `tbl_customer` (
-  `customer_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `customer_nama` varchar(255) NOT NULL,
-  `customer_slug` varchar(255) NOT NULL,
-  `customer_alamat` text DEFAULT NULL,
-  `customer_notelp` varchar(255) DEFAULT NULL,
+CREATE TABLE `tbl_pengecek` (
+  `pengecek_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pengecek_nama` varchar(255) NOT NULL,
+  `pengecek_slug` varchar(255) NOT NULL,
+  `pengecek_alamat` text DEFAULT NULL,
+  `pengecek_notelp` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`customer_id`)
+  PRIMARY KEY (`pengecek_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-/*Data for the table `tbl_customer` */
+/*Data for the table `tbl_pengecek` */
 
-insert  into `tbl_customer`(`customer_id`,`customer_nama`,`customer_slug`,`customer_alamat`,`customer_notelp`,`created_at`,`updated_at`) values 
+insert  into `tbl_pengecek`(`pengecek_id`,`pengecek_nama`,`pengecek_slug`,`pengecek_alamat`,`pengecek_notelp`,`created_at`,`updated_at`) values 
 (2,'Radhian Sobarna','radhian-sobarna','Sumedang','087817379229','2022-11-26 01:36:34','2022-11-26 01:43:58');
 
 /*Table structure for table `tbl_jenisbarang` */
@@ -577,7 +577,7 @@ insert  into `tbl_menu`(`menu_id`,`menu_judul`,`menu_slug`,`menu_icon`,`menu_red
 (1668509889,'Master Barang','master-barang','package','-','2','2','2022-11-15 10:58:09','2022-11-15 11:03:15'),
 (1668510437,'Transaksi','transaksi','repeat','-','4','2','2022-11-15 11:07:17','2022-11-25 15:37:36'),
 (1668510568,'Laporan','laporan','printer','-','5','2','2022-11-15 11:09:28','2022-11-25 15:37:28'),
-(1669390641,'Customer','customer','user','/customer','3','1','2022-11-25 15:37:21','2022-11-25 15:37:36');
+(1669390641,'Pengecek','pengecek','user','/pengecek','3','1','2022-11-25 15:37:21','2022-11-25 15:37:36');
 
 /*Table structure for table `tbl_merk` */
 
