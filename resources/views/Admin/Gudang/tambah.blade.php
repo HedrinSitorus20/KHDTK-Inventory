@@ -3,13 +3,13 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content modal-content-demo">
             <div class="modal-header">
-                <h6 class="modal-title">Tambah Merk</h6><button aria-label="Close" class="btn-close"
+                <h6 class="modal-title">Tambah Gudang</h6><button aria-label="Close" class="btn-close"
                     data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="merk" class="form-label">Nama Merk <span class="text-danger">*</span></label>
-                    <input type="text" name="merk" class="form-control" placeholder="">
+                    <label for="gudang" class="form-label">Nama Gudang <span class="text-danger">*</span></label>
+                    <input type="text" name="gudang" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="ket" class="form-label">Keterangan</label>
@@ -34,13 +34,13 @@
 @section('formTambahJS')
     <script>
         function checkForm() {
-            const merk = $("input[name='merk']").val();
+            const gudang = $("input[name='gudang']").val();
             setLoading(true);
             resetValid();
 
-            if (merk == "") {
-                validasi('Nama Merk wajib di isi!', 'warning');
-                $("input[name='merk']").addClass('is-invalid');
+            if (gudang == "") {
+                validasi('Nama Gudang wajib di isi!', 'warning');
+                $("input[name='gudang']").addClass('is-invalid');
                 setLoading(false);
                 return false;
             } else {
@@ -50,15 +50,15 @@
         }
 
         function submitForm() {
-            const merk = $("input[name='merk']").val();
+            const gudang = $("input[name='gudang']").val();
             const ket = $("textarea[name='ket']").val();
 
             $.ajax({
                 type: 'POST',
-                url: "{{ route('merk.store') }}",
+                url: "{{ route('gudang.store') }}",
                 enctype: 'multipart/form-data',
                 data: {
-                    merk: merk,
+                    gudang: gudang,
                     ket: ket
                 },
                 success: function(data) {
@@ -75,12 +75,12 @@
         }
 
         function resetValid() {
-            $("input[name='merk']").removeClass('is-invalid');
+            $("input[name='gudang']").removeClass('is-invalid');
         };
 
         function reset() {
             resetValid();
-            $("input[name='merk']").val('');
+            $("input[name='gudang']").val('');
             $("textarea[name='ket']").val('');
             setLoading(false);
         }

@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\LapBarangKeluarController;
 use App\Http\Controllers\Admin\LapBarangMasukController;
 use App\Http\Controllers\Admin\LapStokBarangController;
 use App\Http\Controllers\Admin\LoginController;
-use App\Http\Controllers\Admin\MerkController;
+use App\Http\Controllers\Admin\GudangController;
 use App\Http\Controllers\Admin\SatuanController;
 use App\Http\Controllers\Master\AksesController;
 use App\Http\Controllers\Master\AppreanceController;
@@ -71,13 +71,13 @@ Route::group(['middleware' => 'userlogin'], function () {
         Route::post('/admin/satuan/proses_hapus/{satuan}', [SatuanController::class, 'proses_hapus']);
     });
 
-    Route::middleware(['checkRoleUser:/merk,submenu'])->group(function () {
-        // Merk
-        Route::resource('/admin/merk', \App\Http\Controllers\Admin\MerkController::class);
-        Route::get('/admin/merk/show/', [MerkController::class, 'show'])->name('merk.getmerk');
-        Route::post('/admin/merk/proses_tambah/', [MerkController::class, 'proses_tambah'])->name('merk.store');
-        Route::post('/admin/merk/proses_ubah/{merk}', [MerkController::class, 'proses_ubah']);
-        Route::post('/admin/merk/proses_hapus/{merk}', [MerkController::class, 'proses_hapus']);
+    Route::middleware(['checkRoleUser:/gudang,submenu'])->group(function () {
+        // Gudang
+        Route::resource('/admin/gudang', \App\Http\Controllers\Admin\GudangController::class);
+        Route::get('/admin/gudang/show/', [GudangController::class, 'show'])->name('gudang.getgudang');
+        Route::post('/admin/gudang/proses_tambah/', [GudangController::class, 'proses_tambah'])->name('gudang.store');
+        Route::post('/admin/gudang/proses_ubah/{gudang}', [GudangController::class, 'proses_ubah']);
+        Route::post('/admin/gudang/proses_hapus/{gudang}', [GudangController::class, 'proses_hapus']);
     });
 
     Route::middleware(['checkRoleUser:/barang,submenu'])->group(function () {
