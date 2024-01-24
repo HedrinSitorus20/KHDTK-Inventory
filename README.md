@@ -1,12 +1,12 @@
 ![Inventoryweb-thumnail](https://user-images.githubusercontent.com/47371845/205918923-dcc3b42f-4d67-46af-9bd1-d6b577b868cb.jpg)
 
-## *:information_source: Inventoryweb*
+## *:information_source: KHDTK_Inventory*
 Aplikasi ini bisa anda gunakan untuk mengontrol stock barang yang anda miliki sehingga jelas transaksi keluar dan masuk barang tersebut juga mempermudah kontrol barang tersebut.
 <br><br>
 Untuk tampilannya saya sudah pasang template admin `bootstrap v5` yaitu `sash admin`.
 
 ## *:sparkles: Fitur*
-* **Dashboard**
+* **Beranda**
 * **Jenis Barang**
 * **Satuan Barang**
 * **Merk Barang**

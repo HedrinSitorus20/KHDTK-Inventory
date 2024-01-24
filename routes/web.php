@@ -4,7 +4,7 @@ use App\Http\Controllers\Admin\BarangController;
 use App\Http\Controllers\Admin\BarangkeluarController;
 use App\Http\Controllers\Admin\BarangmasukController;
 use App\Http\Controllers\Admin\CustomerController;
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\BerandaController;
 use App\Http\Controllers\Admin\JenisBarangController;
 use App\Http\Controllers\Admin\LapBarangKeluarController;
 use App\Http\Controllers\Admin\LapBarangMasukController;
@@ -47,10 +47,10 @@ Route::group(['middleware' => 'userlogin'], function () {
     Route::get('/admin/appreance/', [AppreanceController::class, 'index']);
     Route::post('/admin/appreance/{setting}', [AppreanceController::class, 'update']);
 
-    Route::middleware(['checkRoleUser:/dashboard,menu'])->group(function () {
-        Route::get('/', [DashboardController::class, 'index']);
-        Route::get('/admin', [DashboardController::class, 'index']);
-        Route::get('/admin/dashboard', [DashboardController::class, 'index']);
+    Route::middleware(['checkRoleUser:/beranda,menu'])->group(function () {
+        Route::get('/', [BerandaController::class, 'index']);
+        Route::get('/admin', [BerandaController::class, 'index']);
+        Route::get('/admin/beranda', [BerandaController::class, 'index']);
     });
 
     Route::middleware(['checkRoleUser:/jenisbarang,submenu'])->group(function () {
