@@ -39,7 +39,7 @@ Untuk tampilannya saya sudah pasang template admin `bootstrap v5` yaitu `sash ad
 #### :arrow_right: Clone Project / Download File
 Clone Project dengan perintah terminal `gitbash` sebagai berikut:
 ```
-git clone https://github.com/Taripar-Technology/KHDTK-inventory.git
+git clone https://github.com/HedrinSitorus20/KHDTK-Inventory.git
 ```
 Atau bisa klik tombol download Zip dan extrak file tersebut
 #### :arrow_right: Buat Database
@@ -66,14 +66,6 @@ php artisan serve
 ```
 copy & paste `http://127.0.0.1:8000/` ke browser anda.
 
-#### :arrow_right: Login Default
-username: `superadmin` password: `12345678`
-<br>
-username: `admin` password: `12345678`
-<br>
-username: `operator` password: `12345678`
-<br>
-username: `manajer` password: `12345678`
 
 ## *:desktop_computer: Preview*
 ![ad3c121d-1c33-4b7f-aa0f-5bb2ddce7cf6](https://user-images.githubusercontent.com/47371845/202890250-2c1e64c6-cc01-453f-b490-43eecab1e153.png)
